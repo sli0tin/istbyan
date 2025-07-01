@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استبيان المعلومات</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* زر الواتساب */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>نموذج استبيان</h2>
+
+  <form>
+    <label for="name">الاسم:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="address">العنوان:</label>
+    <input type="text" id="address" name="address">
+
+    <label for="age">العمر:</label>
+    <input type="number" id="age" name="age" min="1">
+
+    <label for="nationality">الجنسية:</label>
+    <input type="text" id="nationality" name="nationality">
+
+    <label for="gender">الجنس:</label>
+    <select id="gender" name="gender" onchange="toggleHijab(this.value)">
+      <option value="">اختر</option>
+      <option value="ذكر">ذكر</option>
+      <option value="أنثى">أنثى</option>
+    </select>
+
+    <div id="hijabQuestion" style="display:none;">
+      <label for="hijab">هل أنتِ محجبة؟</label>
+      <select id="hijab" name="hijab">
+        <option value="">اختر</option>
+        <option value="نعم">نعم</option>
+        <option value="لا">لا</option>
+      </select>
+    </div>
+
+    <label for="education">المؤهل الدراسي:</label>
+    <input type="text" id="education" name="education">
+
+    <label for="graduation">سنة التخرج:</label>
+    <input type="number" id="graduation" name="graduation">
+
+    <label for="computerExp">خبرة الكمبيوتر:</label>
+    <textarea id="computerExp" name="computerExp" rows="3"></textarea>
+
+    <label for="software">برامج الكمبيوتر المستخدمة:</label>
+    <textarea id="software" name="software" rows="3"></textarea>
+
+    <button type="submit">إرسال</button>
+  </form>
+
+  <a href="https://wa.me/96566906605" class="whatsapp-float" target="_blank" title="تواصل واتساب">
+    💬
+  </a>
+
+  <script>
+    function toggleHijab(value) {
+      const hijabDiv = document.getElementById("hijabQuestion");
+      hijabDiv.style.display = value === "أنثى" ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
